@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, serif;
+    box-sizing: border-box;
+    background: #020303; /* все блоки, кроме футера, имеют 1 цвет фона */
+    color: rgb(255, 255, 255); /* основной цвет текста на странице */
+}
+
+
+/* HEADER STYLES START*/
+
+.header {
+    padding: 30px 0;
+}
+
+.header .container {
+    font-size: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.menu {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 282px;
+}
+
+.menu-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 30px;
+}
+
+.menu-item:first-child {
+    margin-left: 0;
+}
+
+.menu-item:last-child {
+    margin: 0 24px; /* по макету от последнего элемента до предпоследнего 54px, а не 60px, как между остальными */
+}
+
+.menu-item a {
+    font-size: 16px;
+    color: rgb(253, 239, 213);
+    line-height: 1.2;
+    text-decoration: none;
+    padding: 2px 0; /* в макете расстояние до линии подчеривания 6px, но это расстояние прямо от нижнего края текста. На странице 6px выглядит слишком большим, 2px подобрала на глаз */
+}
+
+.menu-item a:hover {
+    color: rgb(255, 175, 24);
+    border-bottom: 2px solid rgb(255, 175, 24);
+}
+
+/* HEADER STYLES END*/
+
+
+/* MAIN SECTION STYLES START*/
+
+.main {
+    margin: 133px 0 200px;
+    text-align: justify;
+}
+
+.main .container {
+    font-size: 0;
+}
+
+.main-text {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 564px;
+    margin-right: 22px; /* по макету 27px, но 1200px(контейнер) - (564px(текст) + 614px(картинка)) = 22px, при отступе больше 22px картинка переновится на следующую строку */
+}
+
+.main-image {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 32px; /* чтобы сместить картинку ниже 165px (от картинки до шапки) - 133px (от заголовка до шапки) */
+}
+
+.main-text-title {
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 1.222;
+    margin-bottom: 74px;
+}
+
+.main-text-title span {
+    color: #ffaf18;
+}
+
+.main-text-advantages {
+    font-size: 0;
+    margin-bottom: 104px; /* от кнопки до текстого элемента, а не до псевдоэлемента */
+}
+
+.main-text-advantages-item {
+    display: inline-block;
+    padding-left: 50px;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.fresh {
+    margin-right: 99px;
+}
+
+.fresh::before {
+    content: url("../images/tuna.png");
+    display: block;
+    margin: 0 0 -22px -50px;
+}
+
+.wide-stock::before {
+    content: url("../images/sushi.png");
+    display: block;
+    margin: 0 0 -30px -50px;
+}
+
+.button {
+    font-size: 16px;
+    color: rgb(2, 3, 3);
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    background-color: rgb(255, 175, 24);
+    border: 0;
+    cursor: pointer;
+}
+
+.main-button {
+    padding: 22px 54px;
+    border-radius: 30px;
+}
+
+.button:hover {
+    box-shadow: 0 15px 30px rgb(255, 175, 24, 0.3); /* параметры выбрала на глаз */
+}
+
+/* MAIN SECTION STYLES END*/
+
+
+/* ROLLS SECTION STYLES START*/
+
+.rolls {
+    margin-bottom: 228px; /* 240px - 12px */
+}
+
+.rolls-title {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 48px; /* 60px - 12px */
+}
+
+.rolls-cards {
+    font-size: 0;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.rolls-card {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 20px 15px;
+    margin: 12px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.rolls-card:first-child, .rolls-card:last-child {
+    outline: 5px solid rgb(237, 155, 0); /* outline в отличие от border не участвует в блочной модели, не влияет на размеры и не занимает места */
+    outline-offset: -5px; /* сместила рамку вовнутрь на толщину */
+}
+
+.rolls-card:hover {
+    box-shadow: 0 0 6px 4px rgba(255, 255, 255, 0.5); /* по макету эта тень box-shadow: 0 3px 14px 1px rgba(152, 152, 152, 0.2), но ее почти невидно, поэтоу взяла от иконки в след. блоке */
+}
+
+.card-info {
+    margin-top: 30px;
+    max-width: 242px;
+}
+
+.card-title {
+    font-size: 18px;
+    color: rgb(24, 26, 26);
+    font-weight: bold;
+    line-height: 1;
+}
+
+.card-text {
+    margin: 15px 0;
+    font-size: 14px;
+    color: rgb(24, 26, 26);
+    line-height: 1.286;
+    height: 53px; /* чтобы карточки были одинакого размера независимо от того, сколько строк занимает текст (до 3 строк вкл.) */
+}
+
+.card-button {
+    padding: 17px 81px 18px;
+    border-radius: 25px;
+}
+
+/* ROLLS SECTION STYLES END*/
+
+
+/* COOK SECTION STYLES START*/
+
+.cook {
+    margin-bottom: 67px;
+    font-size: 0;
+}
+
+.cook-text {
+    display: inline-block;
+    vertical-align: bottom;
+    max-width: 386px; /* текст выделяется до направляющей */
+    margin-right: 46px; /* по макету 48px, но 1200(контейнер) - (768(картинка) + 386(текст)) = 46px */
+}
+
+.cook-image {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.cook-title {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1.286;
+    margin-bottom: 60px;
+}
+
+.cook-info {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 100px;
+}
+
+.cook-more-title {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+.cook-more-icons {
+    font-size: 0;
+}
+
+.cook-more-icon {
+    display: inline-block;
+    vertical-align: middle;
+    background: #fff;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 40px;
+    width: 55px; /* иконки разного размера. задать фиксированные размеры для всех блоков немного проще, чем отдельные отступы для каждого элемента. хотя все равно придется по отдельности выравнивать по высоте через line-height */
+    height: 55px;
+}
+
+.onigiri-icon, .tuna-icon {
+    line-height: 80px; /* подобрала на глаз */
+}
+
+.sushi-icon {
+    line-height: 90px; /* подобрала на глаз */
+}
+
+.cook-more-icon:hover {
+    box-shadow: 0 0 6px 4px rgba(255, 255, 255, 0.5);
+}
+
+.cook-more-icon:visited {
+    background-color: rgb(190, 190, 190);
+}
+
+.cook-more-icon:active {
+    background-color: rgb(255, 175, 24);
+}
+
+/* COOK SECTION STYLES END*/
+
+
+/* FOOTER SECTION STYLES START*/
+
+.footer {
+    background: #000000;
+    padding: 30px 0;
+    font-size: 0;
+}
+
+.rights {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    color: rgb(44, 44, 44);
+    line-height: 1.2;
+    margin-left: 390px;
+}
+
+/* FOOTER SECTION STYLES END*/
